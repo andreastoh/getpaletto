@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Paletto look</title>
+  <meta name="description" content="Open this look in Paletto to frame your own photo the same way.">
+  <link rel="canonical" href="https://getpaletto.com/look.html">
+  <meta property="og:title" content="A Paletto look">
+  <meta property="og:description" content="Open this look in Paletto to frame your own photo the same way.">
+  <meta property="og:image" content="https://getpaletto.com/img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="wordmark" href="./" aria-label="paletto."><span>p</span><span>a</span><span>l</span><span>e</span><span>t</span><span>t</span><span>o</span><span>.</span></a>
+    <nav>
+      <a href="./#pro">Pro</a>
+      <a href="support.html">Support</a>
+      <a class="button small when-live" data-store href="#">Get the app</a>
+    </nav>
+  </div>
+</header>
+<main class="page">
+  <div class="wrap narrow">
+    <div class="strip" aria-hidden="true"><i style="background:#f5f0e6"></i><i style="background:var(--ochre)"></i><i style="background:var(--terracotta)"></i><i style="background:var(--rose)"></i><i style="background:var(--plum)"></i><i style="background:var(--slate)"></i></div>
+    <p class="kicker" id="caption">Someone sent you a look</p>
+    <h1>Open it in Paletto</h1>
+    <p class="lede">Tap below and your next photo in Paletto starts with this look: the same frame, swatches and typeface.</p>
+    <div class="chips" id="chips" aria-hidden="true"></div>
+    <div class="card">
+      <p><a class="button accent" id="open" href="#">Open in Paletto</a></p>
+      <p class="muted">Don't have Paletto yet? <a data-store href="#">Get it on the App Store</a>, then come back to this link.</p>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <a class="wordmark" href="./" aria-label="paletto." style="font-size:22px"><span>p</span><span>a</span><span>l</span><span>e</span><span>t</span><span>t</span><span>o</span><span>.</span></a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms</a>
+    <a href="https://instagram.com/getpaletto">Instagram</a>
+    <span class="right">© 2026 Andreas Toh</span>
+  </div>
+</footer>
+<script>
+  // The look rides in the fragment (never sent to a server). Show its palette and caption,
+  // and point the button at the app's own URL scheme.
+  (function () {
+    var data = location.hash.slice(1);
+    if (!data) return;
+    document.getElementById('open').href = 'paletto://look?d=' + data;
+    try {
+      var json = JSON.parse(atob(data.replace(/-/g, '+').replace(/_/g, '/')));
+      var chips = document.getElementById('chips');
+      (json.hexes || []).forEach(function (hex) {
+        var i = document.createElement('button'); i.style.background = hex; i.tabIndex = -1; chips.appendChild(i);
+      });
+      if (json.caption) document.getElementById('caption').textContent = '“' + json.caption + '”';
+    } catch (e) {}
+  })();
+</script>
+</body>
+</html>

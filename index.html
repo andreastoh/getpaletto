@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paletto — Frame any photo with its color palette</title>
+  <meta name="description" content="Paletto finds the colors in your photo, even the faint ones, and frames it like a gallery print with a strip of swatches. Share it, or print it at 300 dpi. For iPhone and iPad.">
+  <link rel="canonical" href="https://getpaletto.com/">
+  <meta name="theme-color" content="#f4eee4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1c1a18" media="(prefers-color-scheme: dark)">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Paletto">
+  <meta property="og:title" content="Every photo has a palette. Frame it.">
+  <meta property="og:description" content="Paletto turns your photos into gallery prints with their own color palette. iPhone and iPad.">
+  <meta property="og:url" content="https://getpaletto.com/">
+  <meta property="og:image" content="https://getpaletto.com/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="apple-itunes-app" content="app-id=6827217518">
+  <link rel="icon" href="favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Paletto: Photo Palette Frames",
+    "operatingSystem": "iOS 17.4 or later",
+    "applicationCategory": "PhotographyApplication",
+    "description": "Finds the dominant colors of a photo and frames it like a gallery print with a strip of color swatches, exportable at 300 dpi.",
+    "url": "https://getpaletto.com/",
+    "image": "https://getpaletto.com/img/og.jpg",
+    "author": { "@type": "Person", "name": "Andreas Toh" },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="wordmark" href="./" aria-label="paletto."><span>p</span><span>a</span><span>l</span><span>e</span><span>t</span><span>t</span><span>o</span><span>.</span></a>
+    <nav>
+      <a class="hide-sm" href="#how">How it works</a>
+      <a class="hide-sm" href="#frames">Frames</a>
+      <a href="#pro">Pro</a>
+      <a href="https://instagram.com/getpaletto" aria-label="Instagram @getpaletto">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a class="button small when-live" data-store href="#">Get the app</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="pill when-soon">Coming soon to the App Store</span>
+        <span class="pill when-live">Free on iPhone and iPad</span>
+        <h1>Every photo has a palette. Frame it.</h1>
+        <p class="lede">Paletto finds the colors that make your photo, even the faint ones other pickers lose, and sets it in a gallery matte with a strip of swatches. Post it, or hang it at 300&nbsp;dpi.</p>
+        <div class="chips" aria-label="This photo's palette">
+          <button data-hex="#DAA474"></button><button data-hex="#B47C63"></button><button data-hex="#85784B"></button><button data-hex="#C03694"></button><button data-hex="#407395"></button><button data-hex="#A8276F"></button>
+        </div>
+        <div class="ctas">
+          <a class="button when-live" data-store href="#">Download on the App Store</a>
+          <a class="button when-soon" href="https://instagram.com/getpaletto">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor" stroke="none"/></svg>
+            Follow @getpaletto
+          </a>
+          <a class="button ghost" href="#frames">See the frames</a>
+        </div>
+        <p class="fine">No account. No ads. Your photos never leave your phone.</p>
+      </div>
+      <div class="fan" aria-label="Three framed photos with their palettes">
+        <img src="img/bougainvillea.jpg" width="550" height="900" alt="Pink house with bougainvillea, framed with a strip of six swatches">
+        <img src="img/antelope-canyon.jpg" width="550" height="900" alt="Antelope Canyon in a white matte with its sandstone palette">
+        <img src="img/study-in-color.jpg" width="528" height="900" alt="Flower stall in the Paletto signature frame, captioned A Study in Color">
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="wall">
+    <div class="wrap">
+      <p class="kicker">How it works</p>
+      <h2 class="reveal">From camera roll to gallery wall in three taps.</h2>
+      <div class="steps reveal">
+        <div><h3>Pick a photo</h3><p>From your library, the camera, or the share sheet in Photos. Up to four at once for a board.</p></div>
+        <div><h3>Paletto reads its colors</h3><p>Four to eight swatches, sorted light to dark or by hue. Lock the ones you love, tap the photo to pick your own.</p></div>
+        <div><h3>Frame, share, print</h3><p>Sized for the feed, Stories or the print shop, at up to 300&nbsp;dpi.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Extraction -->
+  <section>
+    <div class="wrap split">
+      <img class="hung tall reveal" src="img/jokulsarlon.jpg" width="550" height="900" loading="lazy" alt="Glacier lagoon at Jökulsárlón framed with pale blue and deep navy swatches">
+      <div class="reveal">
+        <p class="kicker">The palette</p>
+        <h2>It sees the pale blue. Not just “gray”.</h2>
+        <p class="lede">Most color pickers average your photo into mud. Paletto keeps the big colors and protects the small accents, so the ice stays icy and one red door still makes the strip.</p>
+        <ul class="ticks">
+          <li>Every swatch is a color that's really in the photo, never a blend</li>
+          <li>Tap a swatch, drag on the photo, and pick it yourself</li>
+          <li>Lock your favorites and shuffle the rest</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Frames rail -->
+  <section id="frames" class="wall">
+    <div class="wrap">
+      <p class="kicker">Frames</p>
+      <h2 class="reveal">One photo. Every mood.</h2>
+      <p class="lede reveal">Classic white, a film strip, a record sleeve, a garden. Swipe through the frames and watch the palette follow.</p>
+    </div>
+    <div class="rail" tabindex="0" aria-label="Frame styles">
+      <figure><img src="img/study-in-color.jpg" width="528" height="900" loading="lazy" alt="Flowers in the Paletto signature frame"><figcaption><b>Paletto</b> · signature</figcaption></figure>
+      <figure><img src="img/film-flowers.jpg" width="531" height="900" loading="lazy" alt="Flowers in a film-strip frame"><figcaption><b>Film</b> · Shot on Film</figcaption></figure>
+      <figure><img src="img/music-flowers.jpg" width="452" height="900" loading="lazy" alt="Flowers in a music player frame"><figcaption><b>Music</b> · Now Playing</figcaption></figure>
+      <figure><img src="img/bloom-flowers.jpg" width="530" height="900" loading="lazy" alt="Flowers in a botanical frame"><figcaption><b>Botanical</b> · In Bloom</figcaption></figure>
+      <figure><img src="img/foodie-camel.jpg" width="465" height="900" loading="lazy" alt="Camel in the Sahara in a gingham frame"><figcaption><b>Foodie</b> · Bon Appétit</figcaption></figure>
+      <figure><img src="img/film-camel.jpg" width="467" height="900" loading="lazy" alt="Camel in the Sahara in a film-strip frame"><figcaption><b>Film</b></figcaption></figure>
+      <figure><img src="img/acropolis.jpg" width="550" height="900" loading="lazy" alt="The Acropolis in a classic white matte"><figcaption><b>Classic</b> · free</figcaption></figure>
+    </div>
+    <div class="wrap"><p class="fine">Plus Safari, Surf, Travel, Space, Camping, Pets, and seasonal mattes from Halloween to Lunar New Year.</p></div>
+  </section>
+
+  <!-- Boards -->
+  <section>
+    <div class="wrap split flip">
+      <img class="hung reveal" src="img/board-chefchaouen.jpg" width="900" height="856" loading="lazy" alt="Three photos from Morocco on one matte with a shared palette">
+      <div class="reveal">
+        <p class="kicker">Boards</p>
+        <h2>Your whole trip. One palette.</h2>
+        <p class="lede">Put two to four photos on one matte and Paletto finds the colors they share. A blue door, the Sahara, a rug market: one strip that tells the story.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Print -->
+  <section class="wall">
+    <div class="wrap split">
+      <img class="hung tall reveal" src="img/acropolis.jpg" width="550" height="900" loading="lazy" alt="The Acropolis framed as a print">
+      <div class="reveal">
+        <p class="kicker">Print</p>
+        <h2>Made for the wall, not just the feed.</h2>
+        <p class="lede">Every frame is drawn to scale, so the print is exactly what you saw on screen. Take it to the print shop at 300&nbsp;dpi.</p>
+        <div class="tags"><span>5×7</span><span>8×10</span><span>A4</span><span>A3</span><span>PDF</span><span>4:5 feed</span><span>Square</span><span>Story</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Designers -->
+  <section>
+    <div class="wrap split flip">
+      <div class="codecard reveal" aria-label="Example palette export">
+        <div class="c">/* Bougainvillea, Greece */</div>
+        <div class="row"><i style="background:#DAA474"></i>--sand: #DAA474;<span class="c">/* RAL 1002 Sand yellow */</span></div>
+        <div class="row"><i style="background:#B47C63"></i>--clay: #B47C63;<span class="c">/* RAL 1011 Brown beige */</span></div>
+        <div class="row"><i style="background:#85784B"></i>--olive: #85784B;<span class="c">/* RAL 8000 Green brown */</span></div>
+        <div class="row"><i style="background:#C03694"></i>--bloom: #C03694;<span class="c">/* RAL 4010 Telemagenta */</span></div>
+        <div class="row"><i style="background:#407395"></i>--shutter: #407395;<span class="c">/* RAL 5007 Brilliant blue */</span></div>
+        <div class="row"><i style="background:#A8276F"></i>--berry: #A8276F;<span class="c">/* RAL 4006 Traffic purple */</span></div>
+      </div>
+      <div class="reveal">
+        <p class="kicker">For designers</p>
+        <h2>Straight into Procreate, Figma and your stylesheet.</h2>
+        <p class="lede">Every swatch in HEX, RGB, HSL, CMYK and OKLCH, a tap to copy. Matched to the nearest RAL Classic paint and web color, for the paint shop or the code.</p>
+        <div class="tags"><span>Procreate .swatches</span><span>Adobe .ase</span><span>CSS</span><span>Tailwind</span><span>SwiftUI</span><span>JSON</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Everywhere -->
+  <section class="wall">
+    <div class="wrap">
+      <p class="kicker">Everywhere you are</p>
+      <h2 class="reveal">Built into your iPhone.</h2>
+      <div class="grid reveal">
+        <div class="tile"><h3>Share sheet</h3><p>Frame a photo straight from Photos, without opening the app.</p></div>
+        <div class="tile"><h3>Instagram Stories</h3><p>Send a frame to your Story as a sticker, over its own colors.</p></div>
+        <div class="tile"><h3>Look links</h3><p>Send a friend your frame style. Their next photo starts the same way.</p></div>
+        <div class="tile"><h3>Home-screen widget</h3><p>Your latest palette, always one glance away.</p></div>
+        <div class="tile"><h3>Palette of the Day</h3><p>An optional morning note with a palette from your own gallery.</p></div>
+        <div class="tile"><h3>Your Colours</h3><p>A year in color: the shades that made your year, ready for your Story.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wall -->
+  <section>
+    <div class="wrap">
+      <p class="kicker">The gallery</p>
+      <h2 class="reveal">Hang them together.</h2>
+      <div class="salon">
+        <img src="img/nyhavn.jpg" width="900" height="828" loading="lazy" alt="Nyhavn, Copenhagen, framed">
+        <img src="img/autumn-tree.jpg" width="550" height="900" loading="lazy" alt="Autumn tree in Japan, framed">
+        <img src="img/oranges-wall.jpg" width="900" height="749" loading="lazy" alt="Oranges on a blue wall in Chefchaouen, framed">
+        <img src="img/bloom-door.jpg" width="466" height="900" loading="lazy" alt="Blue door in a botanical frame">
+        <img src="img/market.jpg" width="900" height="828" loading="lazy" alt="Vegetable market, framed">
+        <img src="img/lugano.jpg" width="900" height="828" loading="lazy" alt="Lake Lugano, framed">
+        <img src="img/music-oranges.jpg" width="758" height="900" loading="lazy" alt="Oranges on a blue wall in a music player frame">
+        <img src="img/foodie-rugs.jpg" width="900" height="806" loading="lazy" alt="Rug market in a gingham frame">
+        <img src="img/bloom-tree.jpg" width="530" height="900" loading="lazy" alt="Autumn tree in a botanical frame">
+        <img src="img/film-nyhavn.jpg" width="900" height="880" loading="lazy" alt="Nyhavn in a film-strip frame">
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pro" class="wall">
+    <div class="wrap">
+      <p class="kicker">Pricing</p>
+      <h2 class="reveal">Free to frame. Pro to finish.</h2>
+      <div class="plans reveal">
+        <div class="plan">
+          <h3>Free</h3>
+          <div class="price">$0</div>
+          <ul class="ticks">
+            <li>The Classic frame in white, cream or black</li>
+            <li>4 to 8 colors, strip, dots or blocks</li>
+            <li>Pick, lock and shuffle swatches</li>
+            <li>Every color code, plus RAL and web matches</li>
+            <li>Sized for the feed, square and Stories</li>
+            <li>Three starter looks, the widget and the share sheet</li>
+          </ul>
+        </div>
+        <div class="plan pro">
+          <h3>Paletto Pro</h3>
+          <p class="muted" style="margin:4px 0 0">Everything in Free, plus the finishing touches.</p>
+          <div class="options">
+            <div class="best"><b>Yearly</b><span>$14.99</span><em>Best value</em></div>
+            <div><b>Monthly</b><span>$2.99</span></div>
+            <div><b>Lifetime</b><span>$29.99</span><em>Pay once</em></div>
+          </div>
+          <ul class="ticks">
+            <li>Every themed frame: Film, Music, Safari, Surf, Travel and seasonal mattes</li>
+            <li>Boards of two to four photos</li>
+            <li>Print sizes at 300 dpi, PDF, and a reveal video for Reels</li>
+            <li>Procreate, Tailwind and SwiftUI exports, hex codes on the frame</li>
+            <li>Mattes in the photo's colors, your signature, caption typefaces</li>
+            <li>Saved looks, batches of 50 photos, re-edit any frame</li>
+          </ul>
+          <p class="fine">Prices in US dollars; the App Store shows yours. Try every Pro frame free; you only pay when you save.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap narrow">
+      <p class="kicker">Questions</p>
+      <h2>Good to know.</h2>
+      <details><summary>Do my photos get uploaded?</summary><p>Never. Paletto reads colors and draws frames on your iPhone or iPad. There are no accounts, no ads, no analytics and no servers.</p></details>
+      <details><summary>Which devices does it run on?</summary><p>iPhone and iPad with iOS 17.4 or later.</p></details>
+      <details><summary>How big can I print?</summary><p>With Pro, up to A3 at 300 dpi, plus 5×7, 8×10 and A4, and a PDF your print shop will take as-is.</p></details>
+      <details><summary>Can I use the palettes in Procreate or Figma?</summary><p>Yes. Pro exports Procreate .swatches, and every plan can copy HEX, RGB, HSL, CMYK and OKLCH codes or export an Adobe .ase file.</p></details>
+      <details><summary>Can I try Pro before paying?</summary><p>Yes. Every Pro frame and option previews for free in the editor. The paywall appears only when you save or share.</p></details>
+      <details><summary>I bought Pro on another device.</summary><p>Open Paletto, tap the crown, then Restore Purchase. Pro follows your Apple Account. More on the <a href="support.html">support page</a>.</p></details>
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <section class="closing wall">
+    <div class="wrap narrow">
+      <div class="strip" aria-hidden="true"><i style="background:#F9D7E5"></i><i style="background:#FBD727"></i><i style="background:#F28BB8"></i><i style="background:#99A1A8"></i><i style="background:#EA3847"></i><i style="background:#2C3D10"></i></div>
+      <h2>Your camera roll is a gallery waiting to happen.</h2>
+      <p class="lede" style="margin-left:auto;margin-right:auto">Share yours with <b>#framedwithpaletto</b> and we'll feature our favorites.</p>
+      <div class="ctas">
+        <a class="button accent when-live" data-store href="#">Download on the App Store</a>
+        <a class="button accent when-soon" href="https://instagram.com/getpaletto">Follow @getpaletto</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="wordmark" href="./" aria-label="paletto." style="font-size:22px"><span>p</span><span>a</span><span>l</span><span>e</span><span>t</span><span>t</span><span>o</span><span>.</span></a>
+    <a href="support.html">Support</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms</a>
+    <a href="https://instagram.com/getpaletto">Instagram</a>
+    <span class="right">© 2026 Andreas Toh</span>
+  </div>
+</footer>
+<div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
