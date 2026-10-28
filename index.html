@@ -21,6 +21,7 @@
   <link rel="icon" href="favicon-32.png" sizes="32x32">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="stylesheet" href="style.css">
+  <script src="palettes.js"></script>
   <script src="site.js"></script>
   <script type="application/ld+json">
   {
@@ -43,6 +44,7 @@
   <div class="wrap">
     <a class="wordmark" href="./" aria-label="paletto."><span>p</span><span>a</span><span>l</span><span>e</span><span>t</span><span>t</span><span>o</span><span>.</span></a>
     <nav>
+      <a class="hide-sm" href="#story">Story</a>
       <a class="hide-sm" href="#how">How it works</a>
       <a class="hide-sm" href="#frames">Frames</a>
       <a href="#pro">Pro</a>
@@ -63,9 +65,10 @@
         <span class="pill when-live">Free on iPhone and iPad</span>
         <h1>Every photo has a palette. Frame it.</h1>
         <p class="lede">Paletto finds the colors that make your photo, even the faint ones other pickers lose, and sets it in a gallery matte with a strip of swatches. Post it, or hang it at 300&nbsp;dpi.</p>
-        <div class="chips" aria-label="This photo's palette">
-          <button data-hex="#DAA172"></button><button data-hex="#B47B63"></button><button data-hex="#C8389B"></button><button data-hex="#407395"></button><button data-hex="#AE2672"></button><button data-hex="#724434"></button><button data-hex="#554D2D"></button><button data-hex="#180308"></button>
+        <div class="chips" aria-label="Today's palette" data-palette-chips>
+          <button type="button" style="background:#DAA172" title="#DAA172"></button><button type="button" style="background:#B47B63" title="#B47B63"></button><button type="button" style="background:#C8389B" title="#C8389B"></button><button type="button" style="background:#407395" title="#407395"></button><button type="button" style="background:#AE2672" title="#AE2672"></button><button type="button" style="background:#724434" title="#724434"></button><button type="button" style="background:#554D2D" title="#554D2D"></button><button type="button" style="background:#180308" title="#180308"></button>
         </div>
+        <p class="today">Today's palette is from <a href="#" data-palette-place>Bougainvillea, Greece</a>. <button type="button" class="linkish" data-palette-shuffle>Show me another</button></p>
         <div class="ctas">
           <a class="button when-live" data-store href="#">Download on the App Store</a>
           <a class="button when-soon" href="https://instagram.com/getpaletto">
@@ -77,10 +80,28 @@
         <p class="fine">No account. No ads. Your photos never leave your phone.</p>
       </div>
       <div class="fan" aria-label="Three framed photos with their palettes">
-        <img src="img/bougainvillea-blocks-caption.jpg" width="521" height="900" alt="Pink house with bougainvillea, eight square color blocks and the caption Bougainvillea">
-        <img src="img/acropolis-strip-location.jpg" width="539" height="900" alt="The Acropolis with camera details, Athens, Greece, its coordinates and a strip of six colors">
-        <img src="img/study-in-color.jpg" width="528" height="900" alt="Flower stall in the Paletto signature frame, captioned A Study in Color">
+        <img data-frame src="img/bougainvillea-blocks-caption.jpg" width="521" height="900" alt="Pink house with bougainvillea, eight square color blocks and the caption Bougainvillea">
+        <img data-frame src="img/acropolis-strip-location.jpg" width="539" height="900" alt="The Acropolis with camera details, Athens, Greece, its coordinates and a strip of six colors">
+        <img data-frame src="img/study-in-color.jpg" width="528" height="900" alt="Flower stall in the Paletto signature frame, captioned A Study in Color">
       </div>
+    </div>
+  </section>
+
+  <!-- A note from Andreas. DRAFT: Andreas to check every line before publishing. -->
+  <section id="story" class="letter-section">
+    <div class="wrap">
+      <article class="letter reveal">
+        <div class="stamp" aria-hidden="true" data-palette-strip><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <p class="kicker">A note from me</p>
+        <h2>Hi, I'm Andreas.</h2>
+        <p>I've carried a small Fujifilm X100V through the markets of Morocco, the islands of Greece, the backstreets of Japan and the ice of Iceland. Every frame on this page is one of my photos.</p>
+        <p>Somewhere along the way I noticed that what I remember about a place isn't one picture. It's its colors. The blue of a door in Chefchaouen. Bougainvillea against a white wall. The pale, almost-gray blue of a glacier lagoon.</p>
+        <p>So I tried the color-picker apps, and they let me down. They turned my glacier gray and averaged the bougainvillea into brown. The small things that made the photo, one red door, one faint blue, were the first to go.</p>
+        <p>Paletto is what I built instead. It looks for the colors that are really in the photo, even the quiet ones, and sets them under the picture like a print I'd want on my own wall. Then I kept going: frames for film and music and food, boards for a whole trip, prints at 300&nbsp;dpi.</p>
+        <p>There are no accounts, no ads and no tracking. Your photos never leave your phone, because I wouldn't want mine to either.</p>
+        <p>If you frame something you love, tag it <b>#framedwithpaletto</b>. I'd love to see where your colors come from.</p>
+        <p class="signoff">Andreas</p>
+      </article>
     </div>
   </section>
 
@@ -100,7 +121,7 @@
   <!-- Extraction -->
   <section>
     <div class="wrap split">
-      <img class="hung tall reveal" src="img/jokulsarlon-blocks-ice.jpg" width="528" height="900" loading="lazy" alt="Glacier lagoon at Jökulsárlón on a pale ice-blue matte, with six small blocks from pale gray-blue to navy and their hex codes">
+      <img data-frame class="hung tall reveal" src="img/jokulsarlon-blocks-ice.jpg" width="528" height="900" loading="lazy" alt="Glacier lagoon at Jökulsárlón on a pale ice-blue matte, with six small blocks from pale gray-blue to navy and their hex codes">
       <div class="reveal">
         <p class="kicker">The palette</p>
         <h2>It sees the pale blue. Not just “gray”.</h2>
@@ -121,9 +142,9 @@
       <h2 class="reveal">Strip, dots or blocks. Big or small.</h2>
       <p class="lede reveal">Four to eight colors, sized and rounded the way you like, sorted light to dark or by hue. Add the hex codes under each one.</p>
       <div class="trio reveal">
-        <figure><img src="img/camel-roundstrip-details.jpg" width="459" height="900" loading="lazy" alt="Camel in the Sahara on a sand matte with a thick, fully rounded strip of sand and sky colors"><figcaption><b>A bold, rounded strip</b>Sahara, Morocco</figcaption></figure>
-        <figure><img src="img/door-dots-hex.jpg" width="455" height="900" loading="lazy" alt="Blue door in Chefchaouen with five blue dots and their hex codes"><figcaption><b>Dots with hex codes</b>Chefchaouen, Morocco</figcaption></figure>
-        <figure><img src="img/autumn-slimblocks-details.jpg" width="535" height="900" loading="lazy" alt="Autumn tree in Japan with seven slim color blocks"><figcaption><b>Seven slim blocks</b>Japan</figcaption></figure>
+        <figure><img data-frame src="img/camel-roundstrip-details.jpg" width="459" height="900" loading="lazy" alt="Camel in the Sahara on a sand matte with a thick, fully rounded strip of sand and sky colors"><figcaption><b>A bold, rounded strip</b>Sahara, Morocco</figcaption></figure>
+        <figure><img data-frame src="img/door-dots-hex.jpg" width="455" height="900" loading="lazy" alt="Blue door in Chefchaouen with five blue dots and their hex codes"><figcaption><b>Dots with hex codes</b>Chefchaouen, Morocco</figcaption></figure>
+        <figure><img data-frame src="img/autumn-slimblocks-details.jpg" width="535" height="900" loading="lazy" alt="Autumn tree in Japan with seven slim color blocks"><figcaption><b>Seven slim blocks</b>Japan</figcaption></figure>
       </div>
     </div>
   </section>
@@ -135,9 +156,9 @@
       <h2 class="reveal">Where it was. How it was shot.</h2>
       <p class="lede reveal">Paletto reads the camera's own record from the photo and can print it under the frame: camera, lens, aperture, shutter and ISO. If the photo knows where it was taken, add the place, the coordinates, or both.</p>
       <div class="trio reveal">
-        <figure><img src="img/lugano-strip-hex.jpg" width="896" height="900" loading="lazy" alt="Lake Lugano on a pale aqua matte, with the camera settings, Lugano, Switzerland, and a strip with hex codes"><figcaption><b>Camera and place</b>Fujifilm X100V · Lugano</figcaption></figure>
-        <figure><img src="img/sagrada-dots-black.jpg" width="900" height="786" loading="lazy" alt="Stained glass in the Sagrada Família on a black matte with orange dots, Barcelona and its coordinates"><figcaption><b>Place and coordinates</b>Barcelona, Spain</figcaption></figure>
-        <figure><img src="img/nyhavn-dots-hex.jpg" width="880" height="900" loading="lazy" alt="Nyhavn, Copenhagen, on a butter-yellow matte with the camera settings and six dots with hex codes"><figcaption><b>Everything at once</b>Copenhagen, Denmark</figcaption></figure>
+        <figure><img data-frame src="img/lugano-strip-hex.jpg" width="896" height="900" loading="lazy" alt="Lake Lugano on a pale aqua matte, with the camera settings, Lugano, Switzerland, and a strip with hex codes"><figcaption><b>Camera and place</b>Fujifilm X100V · Lugano</figcaption></figure>
+        <figure><img data-frame src="img/sagrada-dots-black.jpg" width="900" height="786" loading="lazy" alt="Stained glass in the Sagrada Família on a black matte with orange dots, Barcelona and its coordinates"><figcaption><b>Place and coordinates</b>Barcelona, Spain</figcaption></figure>
+        <figure><img data-frame src="img/nyhavn-dots-hex.jpg" width="880" height="900" loading="lazy" alt="Nyhavn, Copenhagen, on a butter-yellow matte with the camera settings and six dots with hex codes"><figcaption><b>Everything at once</b>Copenhagen, Denmark</figcaption></figure>
       </div>
     </div>
   </section>
@@ -150,13 +171,13 @@
       <p class="lede reveal">Classic white, a film strip, a record sleeve, a garden, a gingham tablecloth. Swipe through the frames and watch the palette follow.</p>
     </div>
     <div class="rail" tabindex="0" aria-label="Frame styles">
-      <figure><img src="img/paletto-tahoe.jpg" width="528" height="900" loading="lazy" alt="Emerald Bay, Lake Tahoe, in the Paletto signature frame, captioned A Study in Color"><figcaption><b>Paletto</b> · signature</figcaption></figure>
-      <figure><img src="img/film-goldengate.jpg" width="920" height="900" loading="lazy" alt="The Golden Gate Bridge in a film-strip frame"><figcaption><b>Film</b> · Shot on Film</figcaption></figure>
-      <figure><img src="img/music-lamps.jpg" width="452" height="900" loading="lazy" alt="Paper lamps along a wooden counter in Japan in a music player frame"><figcaption><b>Music</b> · Now Playing</figcaption></figure>
-      <figure><img src="img/bloom-riad.jpg" width="466" height="900" loading="lazy" alt="A pink riad courtyard with a turquoise pool in a botanical frame"><figcaption><b>Botanical</b> · In Bloom</figcaption></figure>
-      <figure><img src="img/foodie-fruit.jpg" width="915" height="900" loading="lazy" alt="Fruit cart in Ho Chi Minh City in a gingham frame"><figcaption><b>Foodie</b> · Bon Appétit</figcaption></figure>
-      <figure><img src="img/safari-bryce.jpg" width="915" height="900" loading="lazy" alt="Bryce Canyon in a safari frame"><figcaption><b>Safari</b> · Into the Wild</figcaption></figure>
-      <figure><img src="img/classic-sarakiniko.jpg" width="978" height="900" loading="lazy" alt="The white rocks of Sarakiniko, Milos, in a classic white matte"><figcaption><b>Classic</b> · free</figcaption></figure>
+      <figure><img data-frame src="img/paletto-tahoe.jpg" width="528" height="900" loading="lazy" alt="Emerald Bay, Lake Tahoe, in the Paletto signature frame, captioned A Study in Color"><figcaption><b>Paletto</b> · signature</figcaption></figure>
+      <figure><img data-frame src="img/film-goldengate.jpg" width="920" height="900" loading="lazy" alt="The Golden Gate Bridge in a film-strip frame"><figcaption><b>Film</b> · Shot on Film</figcaption></figure>
+      <figure><img data-frame src="img/music-lamps.jpg" width="452" height="900" loading="lazy" alt="Paper lamps along a wooden counter in Japan in a music player frame"><figcaption><b>Music</b> · Now Playing</figcaption></figure>
+      <figure><img data-frame src="img/bloom-riad.jpg" width="466" height="900" loading="lazy" alt="A pink riad courtyard with a turquoise pool in a botanical frame"><figcaption><b>Botanical</b> · In Bloom</figcaption></figure>
+      <figure><img data-frame src="img/foodie-fruit.jpg" width="915" height="900" loading="lazy" alt="Fruit cart in Ho Chi Minh City in a gingham frame"><figcaption><b>Foodie</b> · Bon Appétit</figcaption></figure>
+      <figure><img data-frame src="img/safari-bryce.jpg" width="915" height="900" loading="lazy" alt="Bryce Canyon in a safari frame"><figcaption><b>Safari</b> · Into the Wild</figcaption></figure>
+      <figure><img data-frame src="img/classic-sarakiniko.jpg" width="978" height="900" loading="lazy" alt="The white rocks of Sarakiniko, Milos, in a classic white matte"><figcaption><b>Classic</b> · free</figcaption></figure>
     </div>
     <div class="wrap"><p class="fine">Plus Surf, Travel, Space, Camping, Pets, and seasonal mattes from Halloween to Lunar New Year.</p></div>
   </section>
@@ -164,7 +185,7 @@
   <!-- Boards -->
   <section>
     <div class="wrap split flip">
-      <img class="hung reveal" src="img/board-morocco-market.jpg" width="856" height="900" loading="lazy" alt="Spice sacks, tagines and a hat stall from Morocco on one matte with six shared color blocks, their hex codes and the caption Morocco">
+      <img data-frame class="hung reveal" src="img/board-morocco-market.jpg" width="856" height="900" loading="lazy" alt="Spice sacks, tagines and a hat stall from Morocco on one matte with six shared color blocks, their hex codes and the caption Morocco">
       <div class="reveal">
         <p class="kicker">Boards</p>
         <h2>Your whole trip. One palette.</h2>
@@ -176,7 +197,7 @@
   <!-- Print -->
   <section class="wall">
     <div class="wrap split">
-      <img class="hung tall reveal" src="img/antelope-dots-sky.jpg" width="531" height="900" loading="lazy" alt="Antelope Canyon on a pale sky-blue matte with six dots, Page, Arizona, and its coordinates">
+      <img data-frame class="hung tall reveal" src="img/antelope-dots-sky.jpg" width="531" height="900" loading="lazy" alt="Antelope Canyon on a pale sky-blue matte with six dots, Page, Arizona, and its coordinates">
       <div class="reveal">
         <p class="kicker">Print</p>
         <h2>Made for the wall, not just the feed.</h2>
@@ -228,19 +249,20 @@
   <!-- Wall -->
   <section>
     <div class="wrap">
-      <p class="kicker">The gallery</p>
+      <p class="kicker">From my camera roll</p>
       <h2 class="reveal">Hang them together.</h2>
+      <p class="lede reveal">Every photo on this site is mine, shot on a Fujifilm X100V and framed in Paletto. Tap any frame to see it larger, with its palette.</p>
       <div class="salon">
-        <img src="img/oranges-blocks-hex.jpg" width="900" height="809" loading="lazy" alt="Oranges on a blue wall in Chefchaouen on a pale blue matte with small color blocks and hex codes">
-        <img src="img/ship-strip-details.jpg" width="539" height="900" loading="lazy" alt="A tall ship in a Greek harbor on a deep navy matte, with the camera settings and a slim strip of colors">
-        <img src="img/market-tallblocks-caption.jpg" width="894" height="900" loading="lazy" alt="Vegetable market on a peach matte with five tall blocks and the caption Market Day">
-        <img src="img/film-sunplates.jpg" width="900" height="880" loading="lazy" alt="Painted sun plates on a reed wall in Greece in a film-strip frame">
-        <img src="img/torii-blocks-sage.jpg" width="528" height="900" loading="lazy" alt="A red torii gate in Japan on a sage matte with five small blocks and hex codes">
-        <img src="img/croissants-smalldots-hex.jpg" width="900" height="861" loading="lazy" alt="Croissants in a bakery window on a mint matte with six small dots and hex codes">
-        <img src="img/music-koi.jpg" width="706" height="900" loading="lazy" alt="Koi in a pond in Bangkok in a music player frame">
-        <img src="img/rugs-blocks.jpg" width="900" height="761" loading="lazy" alt="Rug market in Chefchaouen with five blocks, dark first">
-        <img src="img/berries-roundblocks-caption.jpg" width="900" height="890" loading="lazy" alt="Berries and waffles on a blush matte with five rounded blocks and the caption Sunday">
-        <img src="img/travel-blueshop.jpg" width="900" height="802" loading="lazy" alt="A blue shop front in Chefchaouen in a travel frame">
+        <img data-frame src="img/oranges-blocks-hex.jpg" width="900" height="809" loading="lazy" alt="Oranges on a blue wall in Chefchaouen on a pale blue matte with small color blocks and hex codes">
+        <img data-frame src="img/ship-strip-details.jpg" width="539" height="900" loading="lazy" alt="A tall ship in a Greek harbor on a deep navy matte, with the camera settings and a slim strip of colors">
+        <img data-frame src="img/market-tallblocks-caption.jpg" width="894" height="900" loading="lazy" alt="Vegetable market on a peach matte with five tall blocks and the caption Market Day">
+        <img data-frame src="img/film-sunplates.jpg" width="900" height="880" loading="lazy" alt="Painted sun plates on a reed wall in Greece in a film-strip frame">
+        <img data-frame src="img/torii-blocks-sage.jpg" width="528" height="900" loading="lazy" alt="A red torii gate in Japan on a sage matte with five small blocks and hex codes">
+        <img data-frame src="img/croissants-smalldots-hex.jpg" width="900" height="861" loading="lazy" alt="Croissants in a bakery window on a mint matte with six small dots and hex codes">
+        <img data-frame src="img/music-koi.jpg" width="706" height="900" loading="lazy" alt="Koi in a pond in Bangkok in a music player frame">
+        <img data-frame src="img/rugs-blocks.jpg" width="900" height="761" loading="lazy" alt="Rug market in Chefchaouen with five blocks, dark first">
+        <img data-frame src="img/berries-roundblocks-caption.jpg" width="900" height="890" loading="lazy" alt="Berries and waffles on a blush matte with five rounded blocks and the caption Sunday">
+        <img data-frame src="img/travel-blueshop.jpg" width="900" height="802" loading="lazy" alt="A blue shop front in Chefchaouen in a travel frame">
       </div>
     </div>
   </section>
@@ -302,7 +324,7 @@
   <!-- Closing -->
   <section class="closing wall">
     <div class="wrap narrow">
-      <div class="strip" aria-hidden="true"><i style="background:#F9D7E5"></i><i style="background:#FBD727"></i><i style="background:#F28BB8"></i><i style="background:#99A1A8"></i><i style="background:#EA3847"></i><i style="background:#2C3D10"></i></div>
+      <div class="strip" aria-hidden="true" data-palette-strip><i style="background:#F9D7E5"></i><i style="background:#FBD727"></i><i style="background:#F28BB8"></i><i style="background:#99A1A8"></i><i style="background:#EA3847"></i><i style="background:#2C3D10"></i></div>
       <h2>Your camera roll is a gallery waiting to happen.</h2>
       <p class="lede" style="margin-left:auto;margin-right:auto">Share yours with <b>#framedwithpaletto</b> and we'll feature our favorites.</p>
       <div class="ctas">
