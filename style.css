@@ -135,7 +135,7 @@ h3 { font-size: 23px; margin: 0 0 6px; }
 
 .chips { display: flex; gap: 6px; margin: 0 0 28px; }
 .chips button {
-  width: 44px; height: 44px; border-radius: 10px; border: 0; cursor: pointer;
+  flex: 0 1 44px; min-width: 0; aspect-ratio: 1; border-radius: 10px; border: 0; padding: 0; cursor: pointer;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .08);
   transition: transform .15s ease;
 }
@@ -182,6 +182,18 @@ ul.ticks li::before {
 .rail figcaption { margin-top: 14px; font-size: 15px; color: var(--muted); }
 .rail figcaption b { color: var(--text); font-weight: 600; }
 @media (max-width: 640px) { .rail img { height: 340px; } }
+
+/* Three frames side by side (swatch styles, details) */
+.trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 44px; align-items: end; }
+.trio figure { margin: 0; }
+.trio img { box-shadow: var(--shadow); width: 100%; }
+.trio figcaption { margin-top: 16px; font-size: 15px; color: var(--muted); }
+.trio figcaption b { display: block; color: var(--text); font-size: 17px; font-weight: 600; }
+@media (max-width: 760px) {
+  .trio { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  .trio img { max-width: 360px; margin: 0 auto; }
+  .trio figcaption { text-align: center; }
+}
 
 /* Code card for designers */
 .codecard {
