@@ -98,25 +98,30 @@ document.addEventListener('DOMContentLoaded', function () {
     clips.forEach(function (v) { watch.observe(v); });
   }
 
-  // Frames open larger when clicked, with their palette underneath.
+  // Frames open larger when clicked, with their palette underneath. The lightbox steps through
+  // the frames on the page, then the extra frames that only show through "Show me another".
   var frames = Array.prototype.slice.call(document.querySelectorAll('main img[data-frame]'));
+  var items = frames.map(function (img) { return { src: img.getAttribute('src'), alt: img.alt }; });
+  palettes.forEach(function (p) {
+    if (p.extra) items.push({ src: p.img, alt: 'Framed photo, ' + p.place + ', with its palette' });
+  });
   var box, boxImg, boxCap, boxChips, at = 0;
   function byImg(src) {
     for (var i = 0; i < palettes.length; i++) if (palettes[i].img === src) return palettes[i];
     return null;
   }
   function show(i) {
-    at = (i + frames.length) % frames.length;
-    var img = frames[at], src = img.getAttribute('src'), p = byImg(src);
-    boxImg.src = src;
-    boxImg.alt = img.alt;
+    at = (i + items.length) % items.length;
+    var it = items[at], p = byImg(it.src);
+    boxImg.src = it.src;
+    boxImg.alt = it.alt;
     boxCap.textContent = p ? p.place : '';
     boxChips.innerHTML = '';
     if (p) p.hexes.forEach(function (h) { boxChips.appendChild(chip(h)); });
   }
   function openFrame(src) {
-    for (var i = 0; i < frames.length; i++) if (frames[i].getAttribute('src') === src) break;
-    if (i === frames.length) return;
+    for (var i = 0; i < items.length; i++) if (items[i].src === src) break;
+    if (i === items.length) return;
     show(i);
     box.showModal ? box.showModal() : box.setAttribute('open', '');
     document.documentElement.classList.add('boxed');
