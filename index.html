@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Paletto — Frame any photo with its color palette</title>
-  <meta name="description" content="Paletto finds the colors in your photo, even the faint ones, and frames it like a gallery print with a strip of swatches. Share it, or print it at 300 dpi. For iPhone and iPad.">
+  <title>Paletto: Color Palette from Any Photo, Framed | iPhone App</title>
+  <meta name="description" content="Get the color palette of any photo. Paletto finds its colors, even the faint ones, with HEX, RGB and paint codes, and frames it like a gallery print. Share or print at 300 dpi. iPhone and iPad.">
   <link rel="canonical" href="https://getpaletto.com/">
   <meta name="theme-color" content="#f4eee4" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#1c1a18" media="(prefers-color-scheme: dark)">
@@ -16,6 +16,7 @@
   <meta property="og:image" content="https://getpaletto.com/img/og.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Photos framed by Paletto with strips of their own colors">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="apple-itunes-app" content="app-id=6827217518">
   <link rel="icon" href="favicon-32.png?v=2" sizes="32x32">
@@ -23,6 +24,25 @@
   <link rel="stylesheet" href="style.css">
   <script src="palettes.js"></script>
   <script src="site.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Paletto",
+    "alternateName": "getpaletto.com",
+    "url": "https://getpaletto.com/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Paletto",
+    "url": "https://getpaletto.com/",
+    "logo": "https://getpaletto.com/img/icon-512.png",
+    "sameAs": ["https://instagram.com/getpaletto"]
+  }
+  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -80,7 +100,7 @@
         <p class="fine">No account. No ads. Your photos never leave your phone.</p>
       </div>
       <div class="fan" aria-label="Three framed photos with their palettes">
-        <img data-frame src="img/bougainvillea-blocks-caption.jpg" width="521" height="900" alt="Pink house with bougainvillea, eight square color blocks and the caption Bougainvillea">
+        <img data-frame fetchpriority="high" src="img/bougainvillea-blocks-caption.jpg" width="521" height="900" alt="Pink house with bougainvillea, eight square color blocks and the caption Bougainvillea">
         <img data-frame src="img/acropolis-strip-location.jpg" width="539" height="900" alt="The Acropolis with camera details, Athens, Greece, its coordinates and a strip of six colors">
         <img data-frame src="img/study-in-color.jpg" width="528" height="900" alt="Flower stall in the Paletto signature frame, captioned A Study in Color">
       </div>
