@@ -80,6 +80,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Screen recordings play while on screen, and not at all for people who turn off motion;
+  // they can still tap to play.
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var clips = document.querySelectorAll('video[data-autoplay]');
+  clips.forEach(function (v) {
+    v.addEventListener('click', function () { if (v.paused) v.play(); else v.pause(); });
+  });
+  if (!still && 'IntersectionObserver' in window) {
+    var watch = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        var v = e.target;
+        if (e.isIntersecting) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+        else v.pause();
+      });
+    }, { threshold: 0.4 });
+    clips.forEach(function (v) { watch.observe(v); });
+  }
+
   // Frames open larger when clicked, with their palette underneath.
   var frames = Array.prototype.slice.call(document.querySelectorAll('main img[data-frame]'));
   var box, boxImg, boxCap, boxChips, at = 0;

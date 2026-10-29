@@ -193,6 +193,21 @@ ul.ticks li::before {
 .rail figcaption b { color: var(--text); font-weight: 600; }
 @media (max-width: 640px) { .rail img { height: 340px; } }
 
+/* In the app: three phones playing screen recordings */
+.phones { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; margin-top: 44px; align-items: start; }
+.phones figure { margin: 0; }
+.phone {
+  background: #1b1918; padding: 9px; border-radius: 46px; max-width: 300px; margin: 0 auto;
+  box-shadow: var(--shadow), inset 0 0 0 1.5px #3a3532;
+}
+.phone video { display: block; width: 100%; height: auto; aspect-ratio: 360 / 782; border-radius: 37px; background: #f2f2f7; cursor: pointer; }
+.phones figcaption { margin: 20px auto 0; max-width: 300px; font-size: 15px; color: var(--muted); }
+.phones figcaption b { display: block; color: var(--text); font-size: 17px; font-weight: 600; }
+@media (max-width: 760px) {
+  .phones { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 24px; margin: 36px -20px 0; padding: 0 20px 12px; }
+  .phones figure { flex: 0 0 72%; scroll-snap-align: center; }
+}
+
 /* Three frames side by side (swatch styles, details) */
 .trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 44px; align-items: end; }
 .trio figure { margin: 0; }
