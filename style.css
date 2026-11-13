@@ -81,6 +81,8 @@ a { color: var(--accent); }
 .top nav { display: flex; gap: 22px; margin-left: auto; align-items: center; font-size: 15px; }
 .top nav a { color: var(--text); text-decoration: none; }
 .top nav a:hover { color: var(--accent); }
+/* The header's "Get the app" button keeps the button's own text color, not the nav links'. */
+.top nav a.button, .top nav a.button:hover { color: var(--bg); }
 .top nav .hide-sm { display: inline; }
 @media (max-width: 640px) { .top nav .hide-sm { display: none; } .top nav { gap: 16px; } }
 

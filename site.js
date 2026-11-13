@@ -1,7 +1,7 @@
 // Loaded in <head> on every page.
-// Flip LIVE to true the day Paletto is on the App Store: every page swaps its
-// "coming soon" lines for the download buttons.
-var LIVE = false;
+// LIVE has been true since Paletto reached the App Store (13 November 2026): every
+// page shows the download buttons. Set it to false to bring back the "coming soon" lines.
+var LIVE = true;
 var APP_STORE = 'https://apps.apple.com/app/id6827217518';
 
 document.documentElement.classList.add('js');
